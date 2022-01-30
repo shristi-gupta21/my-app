@@ -27,10 +27,10 @@ export default function TextForm(props) {
     setText(res);
   };
 
-  const handleExtraSpace = () =>{
-    const newText = text.split(/[ ]+/)
-    setText(newText.join(" "))
-  }
+  const handleExtraSpace = () => {
+    const newText = text.split(/[ ]+/);
+    setText(newText.join(" "));
+  };
 
   const handleCopy = () => {
     var text = document.getElementById("myBox");
@@ -42,7 +42,12 @@ export default function TextForm(props) {
   // setText("new Text");
   return (
     <>
-      <div className="conatiner">
+      <div
+        className="conatiner my-3"
+        style={{
+          color: props.mode === "dark" ? "white" : "black",
+        }}
+      >
         <h2>{props.heading}</h2>
         <div className="mb-3">
           <textarea
@@ -51,6 +56,10 @@ export default function TextForm(props) {
             value={text}
             id="myBox"
             rows="8"
+            style={{
+              color: props.mode === "dark" ? "white" : "black",
+              backgroundColor: props.mode === "dark" ? "gray" : "white",
+            }} //object
           ></textarea>
         </div>
         <button className="btn btn-primary mx-1" onClick={handleUpClick}>
@@ -72,14 +81,23 @@ export default function TextForm(props) {
           Remove Extra Space
         </button>
       </div>
-      <div className="conatiner my-3">
+      <div
+        className="container my-3"
+        style={{
+          color: props.mode === "dark" ? "white" : "black",
+        }}
+      >
         <h2>Yout text Summary</h2>
         <p>
           {text.split(" ").length} words and {text.length} characters
         </p>
         <p>{0.008 * text.split(" ").length} Minutes read</p>
         <h2>Preview</h2>
-        <p>{text}</p>
+        <p>
+          {text.length > 0
+            ? text
+            : "Enter something int the textbox above to preview it here"}
+        </p>
       </div>
     </>
   );
