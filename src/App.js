@@ -6,6 +6,7 @@ import TextForm from "./components/TextForm";
 
 // import About from "./components/About";
 function App() {
+  
   const [mode, setMode] = useState("light"); //Whether the dark mode is enable or not
   const [alert, setalert] = useState(null);
   const showAlert = (message, type) => {
