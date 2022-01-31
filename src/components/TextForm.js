@@ -3,7 +3,10 @@ export default function TextForm(props) {
   const handleUpClick = () => {
     // console.log("uppercase was clicked");
     let newText = text.toUpperCase();
+    
     setText(newText); //text will get change on the click on the button
+    props.showAlert("Converted to upper case","success")
+    
   };
 
   const handleOnChange = (event) => {
@@ -14,10 +17,14 @@ export default function TextForm(props) {
   const handleLowClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to lower case","success")
+
   };
   const handleClearClick = () => {
     let newText = "";
     setText(newText);
+    props.showAlert("Clear TextBox","success")
+
   };
   const handleNumClick = () => {
     const reg = /[0-9]/g;
@@ -25,17 +32,23 @@ export default function TextForm(props) {
     const newText = text.match(reg);
     const res = newText.join("");
     setText(res);
+    props.showAlert("All numbers are here","success")
+
   };
 
   const handleExtraSpace = () => {
     const newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showAlert("Removed Extra spaces","success")
+
   };
 
   const handleCopy = () => {
     var text = document.getElementById("myBox");
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Copied your text","success")
+
   };
 
   const [text, setText] = useState(""); //text is value, setText is a function
