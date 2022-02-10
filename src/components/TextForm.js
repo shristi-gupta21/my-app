@@ -39,10 +39,10 @@ export default function TextForm(props) {
   };
 
   const handleCopy = () => {
-    var text = document.getElementById("myBox");
-    text.select();
-    document.getSelection().removeAllRanges();
-    navigator.clipboard.writeText(text.value);
+    // var text = document.getElementById("myBox");
+    // text.select();
+    // document.getSelection().removeAllRanges();
+    navigator.clipboard.writeText(text);
     props.showAlert("Copied your text", "success");
   };
 
@@ -122,7 +122,7 @@ export default function TextForm(props) {
         <h2>Yout text Summary</h2>
         <p>
           {
-            text.split(" ").filter((element) => {
+            text.split(/\s+/).filter((element) => {
               return element.length !== 0;
             }).length
           }{" "}

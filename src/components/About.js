@@ -23,6 +23,7 @@ export default function About(props) {
           <h2 className="accordion-header" id="headingOne">
             <button
               className="accordion-button"
+              
               type="button"
               style={myStyle}
               data-bs-toggle="collapse"
