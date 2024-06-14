@@ -70,48 +70,50 @@ export default function TextForm(props) {
             }} //object
           ></textarea>
         </div>
-        <button
-          disabled={text.length === 0}
-          className="btn btn-primary mx-1 my-1"
-          onClick={handleUpClick}
-        >
-          Convert to Uppercase
-        </button>
-        <button
-          disabled={text.length === 0}
-          className="btn btn-primary mx-1 my-1"
-          onClick={handleLowClick}
-        >
-          Convert to Lowercase
-        </button>
-        <button
-          disabled={text.length === 0}
-          className="btn btn-primary mx-1 my-1"
-          onClick={handleClearClick}
-        >
-          Clear Text
-        </button>
-        <button
-          disabled={text.length === 0}
-          className="btn btn-primary mx-1 my-1"
-          onClick={handleNumClick}
-        >
-          Numbers in the text
-        </button>
-        <button
-          disabled={text.length === 0}
-          className="btn btn-primary mx-1 my-1"
-          onClick={handleCopy}
-        >
-          Copy Text
-        </button>
-        <button
-          disabled={text.length === 0}
-          className="btn btn-primary mx-1 my-1"
-          onClick={handleExtraSpace}
-        >
-          Remove Extra Space
-        </button>
+        <div className=" d-flex gap-1 flex-wrap">
+          <button
+            disabled={text.length === 0}
+            className="btn btn-primary mx-1 my-1"
+            onClick={handleUpClick}
+          >
+            Convert to Uppercase
+          </button>
+          <button
+            disabled={text.length === 0}
+            className="btn btn-primary mx-1 my-1"
+            onClick={handleLowClick}
+          >
+            Convert to Lowercase
+          </button>
+          <button
+            disabled={text.length === 0}
+            className="btn btn-primary mx-1 my-1"
+            onClick={handleClearClick}
+          >
+            Clear Text
+          </button>
+          <button
+            disabled={text.length === 0}
+            className="btn btn-primary mx-1 my-1"
+            onClick={handleNumClick}
+          >
+            Numbers in the text
+          </button>
+          <button
+            disabled={text.length === 0}
+            className="btn btn-primary mx-1 my-1"
+            onClick={handleCopy}
+          >
+            Copy Text
+          </button>
+          <button
+            disabled={text.length === 0}
+            className="btn btn-primary mx-1 my-1"
+            onClick={handleExtraSpace}
+          >
+            Remove Extra Space
+          </button>
+        </div>
       </div>
       <div
         className="container my-3"
